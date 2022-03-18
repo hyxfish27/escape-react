@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 function ArticleDetail() {
-  const [state, setState] = useState([]);
+  const [state, setState] = useState({});
   const { articleId } = useParams();
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function ArticleDetail() {
     .then((response) => {
       setState(response.data.article)
     });
-  }, [articleId])
+  }, [])
 
   // 監聽 DOM 資料狀態
   function handleChange(event) {
